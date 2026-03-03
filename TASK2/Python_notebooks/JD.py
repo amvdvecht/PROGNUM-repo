@@ -1,38 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
-# Give the input for the birthdate of the first person
+print("In the following input put your day month and year of birth:") # Give explanaition about what to input
 
-print("In the following inputs put the day month and year of the birth of person 1:")
+D, M, Y = input("Day of birth:"), input("Month of birth:"), input("Year of birth:") # Define varidables D, M, and Y as the input day, month and year of birth
+print(f"The first birth date is: {D}-{M}-{Y}") # Print the put in date
 
-D1, M1, Y1 = input("Day of birth:"), input("Month of birth:"), input("Year of birth:")
-print(f"The first birth date is: {D1}-{M1}-{Y1}")
+D, M, Y = float(D), float(M), float(Y)                # Convert to floats to allow for partial days
 
-
-D1, M1, Y1 = float(D1), float(M1), float(Y1)                # Convert to floats to allow for partial days
-
-JD1 = 367*Y1 -7*(Y1+(M1+9)/12)/4 - 3*((Y1+(M1-9)/7)/100 + 1)/4 + (275*M1)/9 + D1 + 1721029-0.5
-print(f"The JD value of person 1 is {JD1}")     # Calculate the JD value for person 1
-
-# Extension to also calculate a second persons JD and the amount of days in between the first and second birthdate.
-print("In the following inputs put the day month and year of the birth of person 2:")
-
-D2, M2, Y2 = input("Day of birth:"), input("Month of birth:"), input("Year of birth:")
-print(f"The second birth date is: {D2}-{M2}-{Y2}")     
-
-
-D2, M2, Y2 = float(D2), float(M2), float(Y2)                # Convert to floats to allow for partial days
-
-JD2 = 367*Y2 -7*(Y2+(M2+9)/12)/4 - 3*((Y2+(M2-9)/7)/100 + 1)/4 + (275*M2)/9 + D2 + 1721029-0.5
-print(f"The JD value of person 1 is {JD2}")     # Calculate the JD value for person 2
-
-JD1, JD2 = int(JD1), int(JD2)           # Convert to integers to get rid of any decimals without rounding off
-
-Days = abs(JD2-JD1)                    # Calculate the days between two birth dates
-print(f"The amount of days between the 2 dates given is: {Days} days")   # Print the final value
+JD = 367*Y -7*(Y+(M+9)/12)/4 - 3*((Y+(M-9)/7)/100 + 1)/4 + (275*M)/9 + D + 1721029-0.5 # Calculate the JD value with the formula from the question
+print(f"Your JD value is: {JD}")     # Print the previously calculated JD value
 
 
 # In[ ]:
